@@ -235,27 +235,6 @@ median_ci_quantile <- function(x, ...) {
   data.frame(y=u, ymin=x.min, ymax=x.max) 
 }
 
-#************************************
-# ** - calculate response ratio ----
-#************************************
-# match intrinsic lambdas
-pgr.intrinsic <- filter(pgr, background.species == "none")
-pgr.intrinsic$ID_focal.species <- paste(pgr.intrinsic$focal.species, pgr.intrinsic$site)
-
-pgr$ID_focal.species <- paste(pgr$focal.species, pgr$site)
-pgr$pgr.intrinsic.focal <- pgr.intrinsic[match(pgr$ID_focal.species, pgr.intrinsic$ID_focal.species), ]$pgr
-pgr
-
-# log response ratio
-pgr$response.ratio <- log(pgr$pgr/pgr$pgr.intrinsic.focal)
-hist(pgr$response.ratio)
-
-# sample size
-pgr %>%
-  filter(!is.na(response.ratio)) %>%
-  .$site %>%
-  table()
-
 #****************************************************
 # ---- 2. PCA ----
 # to show species distribtuion in fucntional space
@@ -265,7 +244,6 @@ pgr %>%
 # ** - trait data ----
 #************************************
 # all traits without gaps
-#traits <- read_csv("/Users/slyu1/LVSM/NICH/Analysis/NICH-CH3/Trait.csv", na= "NA")
 traits <- read_excel("Trait.csv", na= "NA")
 traits
 
@@ -409,8 +387,6 @@ histogram((pcs$PC3))
 pcs.scale <- as.data.frame(sapply(pcs[,c("PC1", "PC2", "PC3")],scale))
 trait.scale <- cbind(trait.nona[,1:4], trait.scale, pcs.scale)
 
-# write.csv(trait.scale, "/Users/slyu/LVSM/NICH/Data/traits/R output_OK to delete/trait.scale_20220408_with.PCs.csv", na="NA")
-
 #*****************************************************************************
 # ---- 3. Traits between species and across the elevation  ----
 #*****************************************************************************
@@ -507,7 +483,6 @@ trait.cor
 #************************************
 # ** - coexistence data ----
 #************************************
-#outcome <- read_csv("/Users/slyu1/LVSM/NICH/Analysis/NICH-CH3/Coexistence.csv", na="NA")
 outcome <- read_csv("Coexistence.csv", na="NA")
 outcome <- filter(outcome, bootstrap == 0)
 
@@ -705,7 +680,6 @@ sps <- c("Anal", "Armo", "Asal", "Plal", "Poal", "Seca", "Trba",  # 7 alpine
 #************************************
 # ** - population growth rates ----
 #************************************
-# pgr <- read_csv("/Users/slyu1/LVSM/NICH/Analysis/NICH-CH3/Population growth.csv", na="NA")
 pgr <- read_csv("Population growth.csv", na="NA")
 pgr <- filter(pgr, bootstrap == 0)
 
@@ -1099,7 +1073,6 @@ fig.igr_td.hie
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ** - competitive outcomes ----
-# outcome <- read_csv("/Users/slyu1/LVSM/NICH/Analysis/NICH-CH3/Coexistence.csv", na="NA")
 outcome <- read_csv("Coexistence.csv", na="NA")
 outcome <- filter(outcome, bootstrap == 0)
 outcome$sps1.site <- paste(outcome$sps1, outcome$site)
