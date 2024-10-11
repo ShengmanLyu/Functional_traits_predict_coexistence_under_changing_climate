@@ -1,7 +1,6 @@
 # Functional traits predict coexistence under changing climate
 Here are the data and R codes used in Lyu & Alexander (2024). Functional traits predict outcomes of current and novel competition under warmer climate. *Global Change Biology*. A full text is available on BioRxiv: https://doi.org/10.1101/2024.09.26.615168
 
-### There are four data and R script files:
 #### Demography data_raw.xlsx
 > The file includes the raw demographic data used to parameterize integral projection models. 
 
