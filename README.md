@@ -15,4 +15,4 @@ Here are the data and R codes used in Lyu & Alexander (2024). Functional traits 
 The files include the raw and organized trait data. The organized version includes 15 traits averaged for each species at each site.
 
 > #### NICH_coexistence-traits.R
-> R scripts for statistical analyses and data visualisation (Figures 1-3 in the main text).
+> R scripts for statistical analyses and data visualization (Figures 1-3 in the main text).
