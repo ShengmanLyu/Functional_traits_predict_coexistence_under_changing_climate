@@ -10,7 +10,7 @@ Here are the data and R codes used in Lyu & Alexander (2024). Functional traits 
 #### Coexistence.csv 
 > This file includes the estimated outcomes of competition, relative fitness differences and niche overlap.
 
-#### Trait data_raw.xlsx and Trait.csv
+#### Trait data_raw.xlsx, Trait.csv
 The files include the raw and organized trait data. The organized version includes 15 traits averaged for each species at each site.
 
 > #### NICH_coexistence-traits.R
