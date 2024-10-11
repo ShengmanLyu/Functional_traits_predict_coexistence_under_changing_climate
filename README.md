@@ -1,8 +1,8 @@
 # Functional traits predict coexistence under changing climate
-Here are the data and R codes used in Lyu & Alexander (2024). Functional traits predict outcomes of current and novel competition under warmer climate. *Global Change Biology*. A full text is available on BioRxiv: https://doi.org/10.1101/2024.09.26.615168 Each data file has an attached Metadata sheet explaining the variables.
+Here are the data and R codes used in Lyu & Alexander (2024). Functional traits predict outcomes of current and novel competition under warmer climate. *Global Change Biology*. A full text is available on BioRxiv: https://doi.org/10.1101/2024.09.26.615168. Each data file has an attached Metadata sheet explaining the variables.
 
 #### Demography data_raw.xlsx
-> The file includes the raw demographic data used to parameterize integral projection models. 
+> The file includes the raw demographic data, such as individual size and survival at each census. The data was used to estimate vital rates and population growth rates, which are included in "Population growth.xlsx". 
 
 #### Population growth.xlsx
 > This file includes the estimated invasion population growth rates. The estimated population growth rates can also be computed using the raw demographic data. Detailed information on population modeling and coexistence analyses is available in: Lyu, S. and J. M. Alexander (2023). "Compensatory responses of vital rates attenuate impacts of competition on population growth and promote coexistence." *Ecology Letters* 26(3): 437-447. https://doi.org/10.1111/ele.14167 R codes for population modeling and coexistence analyses are available on GitHub: https://github.com/ShengmanLyu/Compensatory_Responses_and_species_coexistence.git 
